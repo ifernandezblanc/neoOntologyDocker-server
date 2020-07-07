@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="®IFDAB">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <title>neont - <%=indName%> report</title>
+    </head>
+    <header id="header">
+        <nav class="left">
+            <a href="/" class="logo">neoOntology</a>
+        </nav>
+        <nav class="right">
+            <a href="/view/files" class="button alt">Files</a>
+            <a href="/view/ontologies" class="button alt">Ontologies</a>
+            <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+            <a href="/view/ontologies/<%=indOnt%>/class/<%=indClass%>/properties" class="button alt">Properties</a>
+            <a href="/view/ontologies/<%=indOnt%>/class/<%=indClass%>/individuals" class="button alt">Individuals</a>
+        </nav>
+    </header>
+    <body class="subpage">
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <header class="align-left">
+                <h1><a href="/view/ontologies/<%=indOnt%>/class/<%=indClass%>/properties">Class: <%=indClass%></a></h1>
+            </header>
+            <h2>Individual: report form</h2>
+            <h2><%=indName%></h2>
+            <form action="/view/ontologies/<%=indOnt%>/class/<%=indClass%>/individual/<%=indName%>/input/result" method="post" id="individual">
+                <% indProps.forEach(function(prop) { %>
+                    <div class="row uniform">
+                        <div class="6u 12u$(xsmall)">
+                            <ul class="actions fit">
+                                <li><a href="#" class="button fit"><%=prop.propName.split(/(?=[A-Z])/).join(" ")%>%></a></li>
+                            </ul>
+                        </div>
+                        <% if (prop.propType === "select") { %>
+                            <div class="6u$ 12u$(xsmall)">
+                                <div class="select-wrapper">
+                                    <select name="<%=prop.propName%>" form="individual">
+                                        <!--Add option of none-->
+                                        <option value=""> </option>
+                                        <!--Add option of new-->
+                                        <% if (prop.propLink !== "") { %>
+                                        <option value="__New">New <%=prop.propLink%></option>
+                                        <% } else {} %>
+                                        <!--Add existing ones-->
+                                        <% prop.propOptions.forEach(function(value) { %>
+                                            <option value="<%=value%>"> <%=value%></option>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        <% } else if (prop.propType === "text") { %>
+                            <div class="6u$ 12u$(xsmall)">
+                                <input type="text" name="<%=prop.propName%>" placeholder="<%=prop.propFormat%>"/>
+                            </div>
+                        <% } else {} %>
+                    </div>
+                <% }); %>
+                <div class="row uniform">
+                    <div class="12u$">
+                        <ul class="actions fit">
+                            <li><input type="submit" value="Submit" class="special fit"/></li>
+                            <li><input type="reset" value="Reset" class="special fit"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </body>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="actions">
+                <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+                <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+                <li>®2019 neoOntology</li>
+            </ul>
+        </div>
+    </footer>
+    <script>src="neoOntology.js"</script>
+</html>

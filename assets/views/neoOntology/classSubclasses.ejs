@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <% let ontClassOnt = uri.split("/").pop().split("#")[0] %>
+    <% let ontClassName = uri.split("#")[1] %>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="®IFDAB">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <title>neont - <%=ontClassName%> subclasses</title>
+    </head>
+    <header id="header">
+        <nav class="left">
+            <a href="/" class="logo">neoOntology</a>
+        </nav>
+        <nav class="right">
+            <a href="/view/files" class="button alt">Files</a>
+            <a href="/view/ontologies" class="button alt">Ontologies</a>
+            <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+            <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/properties" class="button alt">Properties</a>
+            <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/individuals" class="button alt">Individuals</a>
+        </nav>
+    </header>
+    <body class="subpage">
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <header class="align-left">
+                    <h1><a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/subclasses">Class: <%=ontClassName%></a></h1>
+                </header>
+                <h2><%=ontClassName%>: subclasses</h2>
+                <% result.forEach(function(subclass) { %>
+                    <div class="row 200%">
+                        <div class="12u">
+                            <ul class="actions fit">
+                                <% let ontSubClassOnt = subclass[0].ontClass.split("/").pop().split("#")[0] %>
+                                <% let ontSubClassName = subclass[0].ontClass.split("#")[1] %>
+                                <% let now = new Date() %>
+                                <% let date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate() %>
+                                <% let time = now.getHours()+'-'+now.getMinutes()+'-'+now.getSeconds()+(now.getTimezoneOffset()/60) %>
+                                <% let ontSubClassNewIndName = ontSubClassName + "_" + date + "T" + time %>
+                                <!-- Subclass name-->
+                                <li><a href="#" class="button fit"><%=ontSubClassName.split(/(?=[A-Z])/).join(" ")%></a></li>
+                                <!--UPG: Subclass rdfs:about description-->
+                                <!--If rdfs:subClassOf exist-->
+                                <% if (subclass[0].ontSubclasses.length !== 0) { %>
+                                    <li><a href="/view/ontologies/<%=ontSubClassOnt%>/class/<%=ontSubClassName%>/subclasses"
+                                           class="button special fit">Subclasses</a></li>
+                                <% } else {} %>
+                                <!--If owl:datatypeProperty || owl:objectProperty exist-->
+                                <% if (subclass[1].ontProperties.length !== 0) { %>
+                                    <!--Button to classProperties-->
+                                    <li><a href="/view/ontologies/<%=ontSubClassOnt%>/class/<%=ontSubClassName%>/properties"
+                                           class="button special fit">Properties</a></li>
+                                <% } else {} %>
+                                <!--If owl:NamedIndividual exist-->
+                                <% if (subclass[2].ontIndividuals.length !== 0) { %>
+                                    <!--Button to classIndividuals-->
+                                    <li><a href="/view/ontologies/<%=ontSubClassOnt%>/class/<%=ontSubClassName%>/individuals"
+                                           class="button special fit">Individuals</a></li>
+                                <% } else {} %>
+                                <!--If owl:datatypeProperty || owl:objectProperty exist-->
+                                <% if (subclass[1].ontProperties.length !== 0) { %>
+                                    <!--Button to reportIndividual-->
+                                    <li><a href="/view/ontologies/<%=ontSubClassOnt%>/class/<%=ontSubClassName%>/individual/<%=ontSubClassNewIndName%>/input/form"
+                                           class="button special fit">Report</a></li>
+                                <% } else {} %>
+                            </ul>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+    </body>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="actions">
+                <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+                <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+                <li>®2019 neoOntology</li>
+            </ul>
+        </div>
+    </footer>
+    <script>src="neoOntology.js"</script>
+</html>

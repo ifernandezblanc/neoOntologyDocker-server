@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="1_OpEx-1_1_TESGearbox-TESGB2015_1"/>
+
+</Tracking>
+
+<Assembly name="1_OpEx-1_1_TESGearbox-TESGB2015_1s_assembly" assemblyId="dc529870f7ac48d582e206a03aec4ad0">
+<Part name="1_OpEx-1_1_TESGearbox-TESGB2015_1" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-0.207 -0.134833 0.753538" rotation="AD: 1 0 0 210">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

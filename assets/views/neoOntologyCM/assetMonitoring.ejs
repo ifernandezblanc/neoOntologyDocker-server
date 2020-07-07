@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="®IFDAB">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="refresh" content="30">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <title>neoOntologyCM</title>
+    </head>
+    <header id="header">
+        <nav class="left">
+            <a href="/" class="logo">neoOntologyCM</a>
+        </nav>
+        <nav class="right">
+            <a href="/view/files" class="button alt">Files</a>
+            <a href="/view/ontologies" class="button alt">Ontologies</a>
+            <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+        </nav>
+    </header>
+    <body class="subpage">
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <header class="align-left">
+                    <h1><a href="/view/controlmonitoring">Control Monitoring</a></h1>
+                    <h2><a href="/view/ontologies/orgont/individual/<%=results.asset%>/properties">Asset: <%=results.asset%></a></h2>
+                </header>
+                <h3></h3>
+                <h2>Monitoring:</h2>
+                <% results.monitors.forEach(function(monitor) { %>
+                    <h3>Monitor:</h3>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <tr>
+                                <td>Monitor: <a href="/view/ontologies/diagont/individual/<%=monitor.monitorURI.split("#")[1]%>/properties"><b><%=monitor.monitorURI.split("#")[1]%></b></a></td>
+                                <td colspan="2">Monitor Description: <%=monitor.monitorDescription%></td>
+                            </tr>
+                            <tr>
+                                <% if (monitor.monitorStatus.split("#")[1] === "Normal") { %>
+                                    <td colspan="3">Monitor Result: <b><font color="green">Normal behaviour</font> </b></td>
+                                <% } else if (monitor.monitorStatus.split("#")[1] === "SafelyDegraded" || monitor.monitorStatus.split("#")[1] === "UnsafelyDegraded") { %>
+                                    <td colspan="3">Monitor Result: <b><font color="yellow">Degraded behaviour</font> </b></td>
+                                <% } else if (monitor.monitorStatus.split("#")[1] === "Faulty") { %>
+                                    <td>Monitor Result: <b><font color="red">Failure found</font> </b></td>
+                                    <td colspan="2">Failure: <a href="/view/ontologies/diagont/individual/<%=monitor.failureURI.split("#")[1]%>/properties"><b><font color="red"><%=monitor.failureURI.split("#")[1]%></font> </b></a></td>
+                                <% } else { %>
+                                    <td><b><font color="aqua">Logic Error</font></b></td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if (monitor.monitorStatus.split("#")[1] !== "Faulty") { %>
+                                    <td colspan="3">Failure: <b><font color="green">No failure found</font> </b></td>
+                                <% } else { %>
+                                    <td>Failure Impact: <b><font color="red"> <%=monitor.failureImpact.split("#")[1]%></font></b></td>
+                                    <td>Failure Dominion: <b><font color="red"> <%=monitor.failureDominion.split("#")[1]%></font></b></td>
+                                    <td>Failure Phenomenon: <b><font color="red"> <%=monitor.failurePhenomenon.split("#")[1]%></font></b></td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if (monitor.monitorStatus.split("#")[1] !== "Faulty") { } else { %>
+                                    <td colspan="3">Failure Description: <font color="red"><%=monitor.failureDescription%></font></td>
+                                <% } %>
+                            </tr>
+                            <tr><td colspan="3"></td></tr>
+                            <tr><td colspan="3">Monitor Sensors:</td></tr>
+                            <% monitor.auditors.forEach(function(auditor) { %>
+                            <tr><td colspan="4"></td></tr>
+                            <tr>
+                                <td colspan="2">Sensor: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorStateDeviceURI.split("#")[1]%>/properties"><b><%=auditor.auditorStateDeviceURI.split("#")[1]%></b></a></td>
+                                <td colspan="2">Last Measure: <b><%=auditor.auditorCurrentStateDate%></b></td>
+                            </tr>
+                            <tr>
+                                <% if (auditor.auditorComparisonStatus.split("#")[1] === "Normal") { %>
+                                    <td colspan="2">Sensored Component: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorMonitorComponentURI.split("#")[1]%>/properties"><b><font color="green"><%=auditor.auditorMonitorComponentURI.split("#")[1]%></font></b></a></td>
+                                    <td colspan="2">Component Status: <b><font color="green"><%=auditor.auditorComparisonStatus.split("#")[1]%></font></b></td>
+                                <% } else if (auditor.auditorComparisonStatus.split("#")[1] === "SafelyDegraded" || auditor.auditorComparisonStatus.split("#")[1] === "UnsafelyDegraded") { %>
+                                    <td colspan="2">Sensored Component: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorMonitorComponentURI.split("#")[1]%>/properties"><b><font color="yellow"><%=auditor.auditorMonitorComponentURI.split("#")[1]%></font></b></a></td>
+                                    <td colspan="2">Component Status: <b><font color="yellow"><%=auditor.auditorComparisonStatus.split("#")[1]%></font></b></td>
+                                <% } else { %>
+                                    <td colspan="2">Sensored Component: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorMonitorComponentURI.split("#")[1]%>/properties"><b><font color="red"><%=auditor.auditorMonitorComponentURI.split("#")[1]%></font></b></a></td>
+                                    <td colspan="2">Component Status: <b><font color="red"><%=auditor.auditorComparisonStatus.split("#")[1]%></font></b></td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <td>Sensor Value: <b><%=auditor.auditorCurrentStateValue%> <%=auditor.auditorCurrentStateUnit.split("#")[1]%></b></td>
+                                <td><b><%=auditor.auditorComparison.split("#")[1]%></b></td>
+                                <td>Status Value: <b><%=auditor.auditorMonitorStateValue%> <%=auditor.auditorCurrentStateUnit.split("#")[1]%></b></td>
+                            </tr>
+                            <% }); %>
+                        </table>
+                    </div>
+                    <hr>
+                <% }); %>
+                <h3></h3>
+                <h2>Expert recommendations:</h2>
+                <% results.tasks.forEach(function(monitor) { %>
+                    <h3>Recommendation:</h3>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <tr>
+                                <td>Monitor: <a href="/view/ontologies/diagont/individual/<%=monitor.monitorURI.split("#")[1]%>/properties"><b><%=monitor.monitorURI.split("#")[1]%></b></a></td>
+                                <td colspan="2">Monitor Description: <%=monitor.monitorDescription%></td>
+                            </tr>
+                            <tr>
+                                <% if (monitor.monitorStatus.split("#")[1] === "Normal") { %>
+                                    <td colspan="3">Monitor Result: <b><font color="green">Normal behaviour</font> </b></td>
+                                <% } else if (monitor.monitorStatus.split("#")[1] === "SafelyDegraded" || monitor.monitorStatus.split("#")[1] === "UnsafelyDegraded") { %>
+                                    <td colspan="3">Monitor Result: <b><font color="yellow">Degraded behaviour</font> </b></td>
+                                <% } else if (monitor.monitorStatus.split("#")[1] === "Faulty") { %>
+                                    <td>Monitor Result: <b><font color="red">Failure found</font> </b></td>
+                                    <td colspan="2">Failure: <a href="/view/ontologies/diagont/individual/<%=monitor.failureURI.split("#")[1]%>/properties"><b><font color="red"><%=monitor.failureURI.split("#")[1]%></font> </b></a></td>
+                                <% } else { %>
+                                    <td><b><font color="aqua">Logic Error</font></b></td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if (monitor.monitorStatus.split("#")[1] !== "Faulty") { %>
+                                    <td colspan="3">Failure: <b><font color="green">No failure found</font> </b></td>
+                                <% } else { %>
+                                    <td>Failure Impact: <b><font color="red"> <%=monitor.failureImpact.split("#")[1]%></font></b></td>
+                                    <td>Failure Dominion: <b><font color="red"> <%=monitor.failureDominion.split("#")[1]%></font></b></td>
+                                    <td>Failure Phenomenon: <b><font color="red"> <%=monitor.failurePhenomenon.split("#")[1]%></font></b></td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if (monitor.monitorStatus.split("#")[1] !== "Faulty") { } else { %>
+                                    <td colspan="3">Failure Description: <font color="red"><%=monitor.failureDescription%></font></td>
+                                <% } %>
+                            </tr>
+                            <tr><td colspan="3"></td></tr>
+                            <tr><td colspan="3">Monitor Sensors:</td></tr>
+                            <% monitor.auditors.forEach(function(auditor) { %>
+                                <tr><td colspan="4"></td></tr>
+                                <tr>
+                                    <td colspan="2">Sensor: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorStateDeviceURI.split("#")[1]%>/properties"><b><%=auditor.auditorStateDeviceURI.split("#")[1]%></b></a></td>
+                                    <td colspan="2">Last Measure: <b><%=auditor.auditorCurrentStateDate%></b></td>
+                                </tr>
+                                <tr>
+                                    <% if (auditor.auditorComparisonStatus.split("#")[1] === "Normal") { %>
+                                        <td colspan="2">Sensored Component: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorMonitorComponentURI.split("#")[1]%>/properties"><b><font color="green"><%=auditor.auditorMonitorComponentURI.split("#")[1]%></font></b></a></td>
+                                        <td colspan="2">Component Status: <b><font color="green"><%=auditor.auditorComparisonStatus.split("#")[1]%></font></b></td>
+                                    <% } else if (auditor.auditorComparisonStatus.split("#")[1] === "SafelyDegraded" || auditor.auditorComparisonStatus.split("#")[1] === "UnsafelyDegraded") { %>
+                                        <td colspan="2">Sensored Component: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorMonitorComponentURI.split("#")[1]%>/properties"><b><font color="yellow"><%=auditor.auditorMonitorComponentURI.split("#")[1]%></font></b></a></td>
+                                        <td colspan="2">Component Status: <b><font color="yellow"><%=auditor.auditorComparisonStatus.split("#")[1]%></font></b></td>
+                                    <% } else { %>
+                                        <td colspan="2">Sensored Component: <a href="/view/ontologies/orgont/individual/<%=auditor.auditorMonitorComponentURI.split("#")[1]%>/properties"><b><font color="red"><%=auditor.auditorMonitorComponentURI.split("#")[1]%></font></b></a></td>
+                                        <td colspan="2">Component Status: <b><font color="red"><%=auditor.auditorComparisonStatus.split("#")[1]%></font></b></td>
+                                    <% } %>
+                                </tr>
+                                <tr>
+                                    <td>Sensor Value: <b><%=auditor.auditorCurrentStateValue%> <%=auditor.auditorCurrentStateUnit.split("#")[1]%></b></td>
+                                    <td><b><%=auditor.auditorComparison.split("#")[1]%></b></td>
+                                    <td>Status Value: <b><%=auditor.auditorMonitorStateValue%> <%=auditor.auditorCurrentStateUnit.split("#")[1]%></b></td>
+                                </tr>
+                            <% }); %>
+                        </table>
+                    </div>
+                    <hr>
+                <% }); %>
+            </div>
+        </section>
+    </body>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="actions">
+                <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+                <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+                <li>®2019 neoOntology</li>
+            </ul>
+        </div>
+    </footer>
+    <script>src="neoOntology.js"</script>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <% let ontClassOnt = result.ontClass.split("/").pop().split("#")[0]%>
+    <% let ontClassName = result.ontClass.split("#")[1] %>
+    <% let now = new Date() %>
+    <% let date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate() %>
+    <% let time = now.getHours()+'-'+now.getMinutes()+'-'+now.getSeconds()+(now.getTimezoneOffset()/60) %>
+    <% let ontClassNewIndName = ontClassName + "_" + date + "T" + time %>
+    <% let ontIndName = result.ontIndividual.split("#")[1] %>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="®IFDAB">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <title>neont - <%=ontIndName%> properties</title>
+    </head>
+    <header id="header">
+        <nav class="left">
+            <a href="/" class="logo">neoOntology</a>
+        </nav>
+        <nav class="right">
+            <a href="/view/files" class="button alt">Files</a>
+            <a href="/view/ontologies" class="button alt">Ontologies</a>
+            <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+            <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/properties" class="button alt">Properties</a>
+            <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/individuals" class="button alt">Individuals</a>
+            <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/individual/<%=ontClassNewIndName%>/input/form" class="button alt">Report</a>
+        </nav>
+    </header>
+    <body class="subpage">
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <header class="align-left">
+                    <h1><a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/properties">Class: <%=ontClassName%></a></h1>
+                </header>
+                <h2>Individual: properties</h2>
+                <h2><a href="/view/ontologies/<%=ontClassOnt%>/individual/<%=ontIndName%>/properties"><%=ontIndName%></a></h2>
+                <% if (result["ontError"]) { %>
+                    <h3><%= result.ontError%></h3>
+                <% } else { %>
+                    <% result.ontProperties.forEach(function(value) { %>
+                        <div class="row 200%">
+                            <div class="12u">
+                                <ul class="actions fit">
+                                    <% let ontIndPropName = value.ontName.split("#")[1] %>
+                                    <% let ontIndPropType = value.ontType.split("#")[1] %>
+                                    <li><a href="#" class="button fit"><%=ontIndPropName.split(/(?=[A-Z])/).join(" ")%></a></li>
+                                    <!--If owl:ObjectProperty-->
+                                    <% if (ontIndPropType.includes("ObjectProperty")) { %>
+                                        <% let ontIndPropValue = value.ontValue.split("#")[1] %>
+                                        <% let ontIndPropOnt = value.ontValue.split("/").pop().split("#")[0] %>
+                                        <!--Link to individualProperties-->
+                                        <li><a href="/view/ontologies/<%=ontIndPropOnt%>/individual/<%=ontIndPropValue%>/properties" class="button special fit">
+                                                <%=ontIndPropValue%></a></li>
+                                    <!--Else if owl:DatatypeProperty-->
+                                    <% } else if (ontIndPropType.includes("DatatypeProperty")) { %>
+                                        <!--If value is not empty-->
+                                        <% if (value.ontValue) { %>
+                                            <!--Link to file if filetype exists-->
+                                            <% if (value.ontValue.split("/").pop().match(/\.(jpg|png|wav|mp4|obj|owl|dat|xml)$/)) { %>
+                                                <% let ontIndPropValueFileType = value.ontValue.split("/").pop().split(".")[1] %>
+                                                <% let ontIndPropValueFileName = value.ontValue.split("/").pop()%>
+                                                <!--Link to file-->
+                                                <li><a href="/api/files/<%=ontIndPropValueFileType%>/<%=ontIndPropValueFileName%>" class="button special fit">
+                                                        <%=ontIndPropValueFileName%></a></li>
+                                            <% } else { %>
+                                                <!--No link-->
+                                                <li><a href="#" class="button fit"><%=value.ontValue%></a></li>
+                                            <% } %>
+                                        <% } else { %>
+                                            <!--No link-->
+                                            <li><a href="#" class="button fit"><%=value.ontValue%></a></li>
+                                        <% } %>
+                                    <!--Else-->
+                                    <% } else { %>
+                                        <!--No link-->
+                                        <li><a href="#" class="button fit"><%=value.ontValue%></a></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+        </section>
+    </body>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="actions">
+                <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+                <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+                <li>®2019 neoOntology</li>
+            </ul>
+        </div>
+    </footer>
+    <script>src="neoOntology.js"</script>
+</html>

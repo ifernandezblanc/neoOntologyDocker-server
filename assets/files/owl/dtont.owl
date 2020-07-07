@@ -1,0 +1,1303 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://138.250.108.1:3003/api/files/owl/dtont#"
+     xml:base="http://138.250.108.1:3003/api/files/owl/dtont"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dtont="http://138.250.108.1:3003/api/files/owl/dtont#"
+     xmlns:orgont="http://138.250.108.1:3003/api/files/owl/orgont#">
+    <owl:Ontology rdf:about="http://138.250.108.1:3003/api/files/owl/dtont"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#consideredByModule -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#consideredByModule">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Module"/>
+        <rdfs:label>consideredByModule</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#dtontObject -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasDimensionality -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasDimensionality">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>hasDimensionality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasure">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:label>hasMeasure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasMeasureBoolean -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasureBoolean">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasure"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureBoolean"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasMeasureNumeric -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasureNumeric">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasure"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureNumeric"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:label>hasMeasureNumeric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasMeasureText -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasureText">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasMeasure"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureText"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:label>hasMeasureText</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasProperty">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:label>hasProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasStage -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasStage">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Stage"/>
+        <rdfs:label>hasStage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasUnit">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+        <rdfs:label>hasUnit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasUnitBoolean -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasUnitBoolean">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasUnit"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureBoolean"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasUnitNumeric -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasUnitNumeric">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasUnit"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureNumeric"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasUnitText -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasUnitText">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasUnit"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureText"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#isFrom -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#isFrom">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#isFromAsset -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#isFromAsset">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#isFrom"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Asset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#isFromComponent -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#isFromComponent">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#isFrom"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#isFromSystem -->
+
+    <owl:ObjectProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#isFromSystem">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#isFrom"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#dtontData -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#dtontData"/>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasDate">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontData"/>
+        <rdfs:label>hasDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasDateBoolean -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasDateBoolean">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasDate"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureBoolean"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasDateNumeric -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasDateNumeric">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasDate"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureNumeric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasDateNumeric</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasDateText -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasDateText">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasDate"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasValue">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontData"/>
+        <rdfs:label>hasValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasValueBoolean -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasValueBoolean">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasValue"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureBoolean"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasValueNumeric -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasValueNumeric">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasValue"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureNumeric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>hasValueNumeric</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#hasValueText -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#hasValueText">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#hasValue"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#MeasureText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#isPermanent -->
+
+    <owl:DatatypeProperty rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#isPermanent">
+        <rdfs:subPropertyOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtontData"/>
+        <rdfs:domain rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>isPermanent</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Descriptor -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Descriptor">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtont"/>
+        <rdfs:comment>set of all concepts that describe properties of components</rdfs:comment>
+        <rdfs:label>Descriptor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Descriptor"/>
+        <rdfs:comment>refers to dimensions of property (e.g. three-dimensional, bi-dimensional, geometrical, numerical, textual, etc.).</rdfs:comment>
+        <rdfs:label>Dimensionality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Measure -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Measure">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Descriptor"/>
+        <rdfs:comment>refers to the quantification of a property</rdfs:comment>
+        <rdfs:label>Measure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#MeasureBoolean -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#MeasureBoolean">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Measure"/>
+        <rdfs:label>Boolean</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#MeasureNumeric -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#MeasureNumeric">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Measure"/>
+        <rdfs:label>Numeric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#MeasureText -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#MeasureText">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Measure"/>
+        <rdfs:label>Text</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Module -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Module">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtont"/>
+        <rdfs:comment>set of all concepts that refer to machines that use component information</rdfs:comment>
+        <rdfs:label>Module</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Name -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Name">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Descriptor"/>
+        <rdfs:comment>refers to the unique description of a property</rdfs:comment>
+        <rdfs:label>Name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Property -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Property">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#dtont"/>
+        <rdfs:comment>set of all concepts that refer to properies of a component in its lifecycle</rdfs:comment>
+        <rdfs:label>Property</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Stage -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Stage">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Descriptor"/>
+        <rdfs:comment>refers to the lifecycle stage a property is relevant to</rdfs:comment>
+        <rdfs:label>Stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Unit -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Unit">
+        <rdfs:subClassOf rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Descriptor"/>
+        <rdfs:comment>refers to specific descriptor of a value</rdfs:comment>
+        <rdfs:label>Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#dtont -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#dtont">
+        <rdfs:comment>set of all concepts about digital twins for components</rdfs:comment>
+        <rdfs:label>dtont</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#Asset -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#Asset">
+        <rdfs:label>Asset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#Component -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#Component">
+        <rdfs:comment>constituent part of a system that provides a specific functionality</rdfs:comment>
+        <rdfs:label>Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#System -->
+
+    <owl:Class rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#System">
+        <rdfs:comment>constituent part of a asset that provides a specific functionality</rdfs:comment>
+        <rdfs:label>System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Module"/>
+        <rdfs:label>ActiveMonitoring</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Bi-dimensional -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Bi-dimensional">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>Bi-dimensional</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Temperature"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_1"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature10 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature10">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Temperature"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_CPU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature11 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature11">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Temperature"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_CPU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature12 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature12">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Temperature"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_CPU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUTemperature2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Temperature"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_2"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_1"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage10 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage10">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_CPU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage11 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage11">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_CPU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage12 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage12">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_CPU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#CPUUsage2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_2"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connection -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connection">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Name"/>
+        <rdfs:label>Connection</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-2_2_ClientMissionComputer-BBCKTSHBCDT2019_2"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity10 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity10">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity11 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity11">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity12 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity12">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_CameraTFU-Main"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity13 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity13">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgontt#1_CameraTFU-Internal"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity14 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity14">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_MakitoEncoder"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity15 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity15">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_POS_Unit"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity16 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity16">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Terrafix"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity17 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity17">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgontt#1_CameraIFU"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity18 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity18">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_RiTRIG"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity19 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity19">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromSystem rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_Scanner"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_CMR-BBCKCDT2019_1"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Connectivity3 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Connectivity3">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Connection"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_MNT-BBCKTSHBCDT2019_3"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Deegres -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Deegres">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>Deegres</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#DegreesCelsius -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#DegreesCelsius">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>DegreesCelsius</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Geometrical -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Geometrical">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>Geometrical</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Kelvin -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Kelvin">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>Kelvin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Location -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Location">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Name"/>
+        <rdfs:label>Location</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#ManualImput -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#ManualImput">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Module"/>
+        <rdfs:label>ManualImput</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Meter -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Meter">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>Meter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Millimeter -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Millimeter">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>Millimeter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Multi-dimensional -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Multi-dimensional">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:comment>refers to propierties that have textual and numerical or other dimensions
+e.g. tire that is 120-60-17H which is three-dimensional and textual in the same time</rdfs:comment>
+        <rdfs:label>Multi-dimensional</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#NoUnit -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#NoUnit">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>NoUnit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Numerical -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Numerical">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>Numerical</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Percentages -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Percentages">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Unit"/>
+        <rdfs:label>Percentages</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_RAM-BBCKTSHBRAMDT2019_1"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage10 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage10">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_RAM"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage11 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage11">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_RAM"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage12 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage12">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_RAM"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#RAMUsage2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Property"/>
+        <consideredByModule rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#ActiveMonitoring"/>
+        <hasDimensionality rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Numerical"/>
+        <hasName rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Usage"/>
+        <hasStage rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Working"/>
+        <isFromComponent rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_RAM-BBCKTSHBRAMDT2019_2"/>
+        <isPermanent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</isPermanent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Service -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Service">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Stage"/>
+        <rdfs:label>Service</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Temperature -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Temperature">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Name"/>
+        <rdfs:label>Temperature</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Textual -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Textual">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>Textual</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Three-dimensional -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Three-dimensional">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>Three-dimensional</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Uni-dimensional">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Dimensionality"/>
+        <rdfs:label>Uni-dimensional</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Usage -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Usage">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Name"/>
+        <rdfs:label>Usage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/dtont#Working -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/dtont#Working">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/dtont#Stage"/>
+        <rdfs:comment>stage of component showing real time data</rdfs:comment>
+        <rdfs:label>Working</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_CameraTFU-Main -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_CameraTFU-Main">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_CPU -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_CPU">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_RAM -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_ClientMissionComputer_RAM">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_CPU -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_CPU">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_RAM -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_GetacLaptop_RAM">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_MakitoEncoder -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_MakitoEncoder">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_CPU-BBCKTSHBCPUDT2019_2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_MNT-BBCKTSHBCDT2019_3 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_1_MNT-BBCKTSHBCDT2019_3">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_CMR-BBCKCDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_CMR-BBCKCDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_RAM-BBCKTSHBRAMDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_RAM-BBCKTSHBRAMDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_RAM-BBCKTSHBRAMDT2019_2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_2_RAM-BBCKTSHBRAMDT2019_2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_3_SWT-BBCKSDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-0_3_SWT-BBCKSDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-1_4_TESMissionSystem-BBCKDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-1_4_TESMissionSystem-BBCKDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Asset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-2_1_MainMissionComputer-BBCKTSHBCDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-2_1_MainMissionComputer-BBCKTSHBCDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-2_2_ClientMissionComputer-BBCKTSHBCDT2019_2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-2_2_ClientMissionComputer-BBCKTSHBCDT2019_2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-3_1_MainBoard-BBCKTSHBMBDT2019_1 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-3_1_MainBoard-BBCKTSHBMBDT2019_1">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-3_1_MainBoard-BBCKTSHBMBDT2019_2 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_OpEx-3_1_MainBoard-BBCKTSHBMBDT2019_2">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_POS_Unit -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_POS_Unit">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_RiTRIG -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_RiTRIG">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_Scanner -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Regil_Scanner">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001 -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_CPU -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_CPU">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_RAM -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Systel_EB7001_RAM">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#Component"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgont#1_Terrafix -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgont#1_Terrafix">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgontt#1_CameraIFU -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgontt#1_CameraIFU">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://138.250.108.1:3003/api/files/owl/orgontt#1_CameraTFU-Internal -->
+
+    <owl:NamedIndividual rdf:about="http://138.250.108.1:3003/api/files/owl/orgontt#1_CameraTFU-Internal">
+        <rdf:type rdf:resource="http://138.250.108.1:3003/api/files/owl/orgont#System"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi -->
+

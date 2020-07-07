@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="®IFDAB">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="30">
+    <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+    <title>neont - Asset Monitoring</title>
+</head>
+<header id="header">
+    <nav class="left">
+        <a href="/" class="logo">neoOntology</a>
+    </nav>
+    <nav class="right">
+        <a href="/view/files" class="button alt">Files</a>
+        <a href="/view/ontologies" class="button alt">Ontologies</a>
+        <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+    </nav>
+</header>
+<body class="subpage">
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="align-left">
+            <h1><a href="/view/controlmonitoring">Asset Monitoring</a></h1>
+            <h2><a href="/view/ontologies/orgont/individual/1_OpEx-1_4_TESMissionSystem-BBCKDT2019_1/properties">Asset: 1_OpEx-1_4_TESMissionSystem-BBCKDT2019_1</a></h2>
+            <h3>Last check: <%=checkDate%></h3>
+        </header>
+        <div class="table-wrapper">
+            <table class="alt">
+                <tr>
+                    <td colspan="2">Monitor</td>
+                    <td colspan="2">Client Mission Computer</td>
+                    <td colspan="2">Main Mission Computer</td>
+                    <td colspan="2">Camera</td>
+                </tr>
+                <tr>
+                    <td>Last checked</td>
+                    <td><%=mntCheck.split("T")[1]%></td>
+                    <td>Last checked</td>
+                    <td><%=cmcCheck.split("T")[1]%></td>
+                    <td>Last checked</td>
+                    <td><%=mmcCheck.split("T")[1]%></td>
+                    <td>Last checked</td>
+                    <td><%=cmrCheck.split("T")[1]%></td>
+                </tr>
+                <tr>
+                    <td>CPU Usage</td>
+                    <td>---</td>
+                    <td>CPU Usage</td>
+                    <td><%=cmcCPUUSAGE%> %</td>
+                    <td>CPU Usage</td>
+                    <td><%=mmcCPUUSAGE%> %</td>
+                    <td>CPU Usage</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>RAM Usage</td>
+                    <td>---</td>
+                    <td>RAM Usage</td>
+                    <td><%=cmcRAMUSAGE%> %</td>
+                    <td>RAM Usage</td>
+                    <td><%=mmcRAMUSAGE%> %</td>
+                    <td>RAM Usage</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Temperature</td>
+                    <td>---</td>
+                    <td>Temperature</td>
+                    <td><%=cmcCPUTEMP - 273%> °C</td>
+                    <td>Temperature</td>
+                    <td><%=mmcCPUTEMP - 273%> °C</td>
+                    <td>Temperature</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Connected</td>
+                    <td><%if(mntCON==="0"){%><font color="red">NO</font><%}else{%><font color="green">YES</font><%}%></td>
+                    <td>Connected</td>
+                    <td><%if(cmcCON==="0"){%><font color="red">NO</font><%}else{%><font color="green">YES</font><%}%></td>
+                    <td>Connected</td>
+                    <td><%if((mntCON==="0")&&(cmcCON==="0")&&(cmrCON==="0")){%><font color="red">NO</font><%}else{%><font color="green">YES</font><%}%></td>
+                    <td>Connected</td>
+                    <td><%if(cmrCON==="0"){%><font color="red">NO</font><%}else{%><font color="green">YES</font><%}%></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+<footer id="footer">
+    <div class="inner">
+        <ul class="actions">
+            <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+            <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+            <li>®2019 neoOntology</li>
+        </ul>
+    </div>
+</footer>
+<script>src="neoOntology.js"</script>
+</html>

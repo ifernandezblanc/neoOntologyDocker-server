@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="®IFDAB">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <title>neont - <%=result.fileType%> files</title>
+    </head>
+    <header id="header">
+        <nav class="left">
+            <a href="/" class="logo">neoOntology</a>
+        </nav>
+        <nav class="right">
+            <a href="/view/files" class="button alt">Files</a>
+            <a href="/view/ontologies" class="button alt">Ontologies</a>
+            <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+        </nav>
+    </header>
+    <body class="subpage">
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <header class="align-left">
+                    <h1><a href="/view/files/<%=result.fileType%>">Files .<%=result.fileType%></a></h1>
+                </header>
+                <h2>File upload</h2>
+                <form method="post" action="/api/files/<%=result.fileType %>/upload" enctype="multipart/form-data">
+                    <div class="row uniform">
+                        <div class="6u 12u$(xsmall)">
+                            <input type="file" name="file" class="fit"/>
+                        </div>
+                        <div class="6u$ 12u$(xsmall)">
+                            <input type="submit" value="Upload file" class="fit"/>
+                        </div>
+                    </div>
+                </form>
+                <h2>Files available</h2>
+                    <div class="12u$">
+                        <ul class="actions vertical">
+                            <% result.filesNames.forEach(function(value){ %>
+                            <li><a href="/api/files/<%=result.fileType%>/<%=value%>" class="button special fit"><%=value%></a></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+            </div>
+        </section>
+    </body>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="actions">
+                <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+                <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+                <li>®2019 neoOntology</li>
+            </ul>
+        </div>
+    </footer>
+    <script>src="neoOntology.js"</script>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="1_OpEx-1_3_TESFuelHatch-TESFH2018_1"/>
+
+</Tracking>
+
+<Assembly name="1_OpEx-1_3_TESFuelHatch-TESFH2018_1s_assembly" assemblyId="2b7942ed980e48c783a674f9e8773344">
+<Part name="1_OpEx-1_3_TESFuelHatch-TESFH2018_1" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-1.57489e-17 0.115651 1.34346" rotation="AD: 1 2.6270872679822088e-17 -2.1965509520088198e-18 206">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

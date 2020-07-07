@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <% let ontClassOnt = result[0].ontClass.split("/").pop().split("#")[0]%>
+    <% let ontClassName = result[0].ontClass.split("#")[1]%>
+    <% let now = new Date() %>
+    <% let date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate() %>
+    <% let time = now.getHours()+'-'+now.getMinutes()+'-'+now.getSeconds()+(now.getTimezoneOffset()/60) %>
+    <% let ontClassNewIndName = ontClassName + "_" + date + "T" + time %>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="®IFDAB">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <title>neont - <%=ontClassName%> properties</title>
+    </head>
+    <header id="header">
+        <nav class="left">
+            <a href="/" class="logo">neoOntology</a>
+        </nav>
+        <nav class="right">
+            <a href="/view/files" class="button alt">Files</a>
+            <a href="/view/ontologies" class="button alt">Ontologies</a>
+            <a href="/view/controlmonitoring" class="button alt">Monitoring</a>
+            <!--If owl:NamedIndividual exist-->
+            <% if (result[1].ontIndividuals.length !== 0) { %>
+                <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/individuals" class="button alt">Individuals</a>
+            <% } else {} %>
+            <!--If owl:datatypeProperty || owl:objectProperty exist-->
+            <% if (result[0].ontProperties.length !== 0) { %>
+                <a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/individual/<%=ontClassNewIndName%>/input/form" class="button alt">Report</a>
+            <% } else {} %>
+        </nav>
+    </header>
+    <body class="subpage">
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <header class="align-left">
+                    <h1><a href="/view/ontologies/<%=ontClassOnt%>/class/<%=ontClassName%>/properties">Class: <%=ontClassName%></a></h1>
+                </header>
+                <h2><%=ontClassName%>: properties</h2>
+                <% result[0].ontProperties.forEach(function(property) { %>
+                    <div class="row 200%">
+                        <div class="12u">
+                            <ul class="actions fit">
+                                <% let ontPropName = property.ontName.split("#")[1] %>
+                                <% let ontPropRange = property.ontRange.split("#")[1] %>
+                                <% let ontPropType = property.ontType.split("#")[1] %>
+                                <li><a href="#" class="button fit"><%=ontPropName.split(/(?=[A-Z])/).join(" ")%></a></li>
+                                <li><a href="#" class="button fit"><%=ontPropRange.split(/(?=[A-Z])/).join(" ")%></a></li>
+                                <!--UPG: Property rdfs:about description-->
+                                <!--If owl:ObjectProperty exist-->
+                                <% if (ontPropType.includes("ObjectProperty")) { %>
+                                    <% let ontPropRangeOnt = property.ontRange.split("/").pop().split("#")[0]%>
+                                    <li><a href="/view/ontologies/<%=ontPropRangeOnt%>/class/<%=ontPropRange%>/properties" class="button special fit">
+                                            Range Properties</a></li>
+                                <% } else {} %>
+                            </ul>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+    </body>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="actions">
+                <li><a href="mailto:i.fernandez@cranfield.ac.uk">Iñigo Fernández del Amo</a></li>
+                <li><a href="https://www.cranfield.ac.uk/people/iigo-fernndez-del-amo-blanco-15695326">&copy; Cranfield University</a></li>
+                <li>®2019 neoOntology</li>
+            </ul>
+        </div>
+    </footer>
+    <script>src="neoOntology.js"</script>
+</html>
